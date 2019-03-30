@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
+    public float duration = 3.0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,11 +28,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.AButton())
-            Debug.Log("Success");
-
-        if (InputManager.AButtonTwo())
-            Debug.Log("MegaSuccess");
 
         if (CompareTag("Player1"))
         {
@@ -49,7 +46,8 @@ public class Player : MonoBehaviour
 
             if (cakeCount1 > 0 && InputManager.AButton())
             {
-                speedBoost();
+                StartCoroutine(speedBoost());
+                cakeCount1--;
             }
             if (cakeCount1 > 0 && InputManager.BButton())
             {
@@ -62,9 +60,20 @@ public class Player : MonoBehaviour
             Vector2 moveInput = new Vector2(Input.GetAxisRaw("2J_MainHorizontal"), Input.GetAxisRaw("2J_MainVertical"));
             moveVelocity = moveInput.normalized * speed;
 
+            if (moveInput.magnitude == 0)
+            {
+                anim.SetBool("isMoving", false);
+            }
+
+            else
+            {
+                anim.SetBool("isMoving", true);
+            }
+
             if (cakeCount2 > 0 && InputManager.AButtonTwo())
             {
-                speedBoost();
+                StartCoroutine(speedBoost());
+                cakeCount2--;
                 Debug.Log("Cookie Success");
             }
 
@@ -73,8 +82,63 @@ public class Player : MonoBehaviour
                 Debug.Log(cakeCount2);
             }
         }
+        if (CompareTag("Player3"))
+        {
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("3J_MainHorizontal"), Input.GetAxisRaw("3J_MainVertical"));
+            moveVelocity = moveInput.normalized * speed;
 
+            if (moveInput.magnitude == 0)
+            {
+                anim.SetBool("isMoving", false);
+            }
+
+            else
+            {
+                anim.SetBool("isMoving", true);
+            }
+
+            if (cakeCount3 > 0 && InputManager.AButtonThree())
+            {
+                StartCoroutine(speedBoost());
+                cakeCount3--; 
+                Debug.Log("Cookie Success");
+            }
+
+            if (InputManager.BButtonThree())
+            {
+                Debug.Log(cakeCount3);
+            }
+
+        }
+        if (CompareTag("Player4"))
+        {
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("4J_MainHorizontal"), Input.GetAxisRaw("4J_MainVertical"));
+            moveVelocity = moveInput.normalized * speed;
+
+            if (moveInput.magnitude == 0)
+            {
+                anim.SetBool("isMoving", false);
+            }
+
+            else
+            {
+                anim.SetBool("isMoving", true);
+            }
+
+            if (cakeCount4 > 0 && InputManager.AButtonFour())
+            {
+                StartCoroutine(speedBoost());
+                cakeCount4--;
+                Debug.Log("Cookie Success");
+            }
+
+            if (InputManager.BButtonFour())
+            {
+                Debug.Log(cakeCount4);
+            }
+        }
     }
+
 
     private void FixedUpdate()
     {
@@ -122,9 +186,13 @@ public class Player : MonoBehaviour
     }
 
     // if cakecount <0 and keydown x speed upp i x antal sekunder
-    private void speedBoost()
+    IEnumerator speedBoost()
     {
         speed = 14f;
+
+        yield return new WaitForSeconds(duration);
+
+        speed = 9.0f;
     }
 
     private void invisible()
