@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int cakeCount = 0;
+    private int cakeCount1 = 0;
+    private int cakeCount2 = 0;
+    private int cakeCount3 = 0;
+    private int cakeCount4 = 0;
 
     [SerializeField] private float speed;
 
@@ -13,31 +16,64 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+
     }
 
-    void Update()
+    private void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveVelocity = moveInput.normalized * speed;
+        if (InputManager.AButton())
+            Debug.Log("Success");
 
-        if (moveInput.magnitude == 0)
+        if (InputManager.AButtonTwo())
+            Debug.Log("MegaSuccess");
+
+        if (CompareTag("Player1"))
         {
-            anim.SetBool("isMoving", false);
-        }
-        else
-        {
-            anim.SetBool("isMoving", true);
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("1J_MainHorizontal"), Input.GetAxisRaw("1J_MainVertical"));
+            moveVelocity = moveInput.normalized * speed;
+
+            if (moveInput.magnitude == 0)
+            {
+                anim.SetBool("isMoving", false);
+            }
+
+            else
+            {
+                anim.SetBool("isMoving", true);
+            }
+
+            if (cakeCount1 > 0 && InputManager.AButton())
+            {
+                speedBoost();
+            }
+            if (cakeCount1 > 0 && InputManager.BButton())
+            {
+                invisible();
+            }
         }
 
-        if (cakeCount > 0 && Input.GetKeyDown(KeyCode.Space))
+        if (CompareTag("Player2"))
         {
-            speedBoost();
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("2J_MainHorizontal"), Input.GetAxisRaw("2J_MainVertical"));
+            moveVelocity = moveInput.normalized * speed;
+
+            if (cakeCount2 > 0 && InputManager.AButtonTwo())
+            {
+                speedBoost();
+                Debug.Log("Cookie Success");
+            }
+
+            if (InputManager.BButtonTwo())
+            {
+                Debug.Log(cakeCount2);
+            }
         }
+
     }
 
     private void FixedUpdate()
@@ -45,19 +81,55 @@ public class Player : MonoBehaviour
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 
-    public void AddCake()
+    public void AddCake1()
     {
-        cakeCount++;
+        cakeCount1++;
     }
-    public int GetNumberOfCakes()
+
+    public void AddCake2()
     {
-        return cakeCount;
+        cakeCount2++;
+    }
+
+    public void AddCake3()
+    {
+        cakeCount3++;
+    }
+
+    public void AddCake4()
+    {
+        cakeCount4++;
+    }
+
+    public int GetNumberOfCakes1()
+    {
+        return cakeCount1;
+    }
+
+    public int GetNumberOfCake2()
+    {
+        return cakeCount2;
+    }
+
+    public int GetNumberOfCake3()
+    {
+        return cakeCount3;
+    }
+
+    public int GetNumberOfCake4()
+    {
+        return cakeCount4;
     }
 
     // if cakecount <0 and keydown x speed upp i x antal sekunder
     private void speedBoost()
     {
         speed = 14f;
+    }
+
+    private void invisible()
+    {
+        Debug.Log("Invisible");
     }
 }
 
