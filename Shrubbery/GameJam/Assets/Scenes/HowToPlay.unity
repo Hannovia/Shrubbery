@@ -1440,8 +1440,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Fin text som beskriver v\xE5rt spel och vad det g\xE5r ut p\xE5\n\n\nF\xF6rklara
-    speedboost"
+  m_Text: "M\xE5l:\nTa s\xE5 m\xE5nga t\xE5rtbitar du kan under 1 min.\nPiece of cake!\n\nSpeedboost:\nKostar
+    en bit och varar i 3 sekunder."
 --- !u!222 &1928168102
 CanvasRenderer:
   m_ObjectHideFlags: 0
