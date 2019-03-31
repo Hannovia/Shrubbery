@@ -46,12 +46,12 @@ public class Player : MonoBehaviour
                 anim.SetBool("isMoving", true);
             }
 
-            if (cakeCount1 > 0 && InputManager.AButton())
+            if (cakeCount > 0 && InputManager.AButton())
             {
                 StartCoroutine(speedBoost());
-                cakeCount1--;
+                cakeCount--;
             }
-            if (cakeCount1 > 0 && InputManager.BButton())
+            if (cakeCount > 0 && InputManager.BButton())
             {
                 invisible();
             }
@@ -72,17 +72,14 @@ public class Player : MonoBehaviour
                 anim.SetBool("isMoving", true);
             }
 
-            if (cakeCount2 > 0 && InputManager.AButtonTwo())
+            if (cakeCount > 0 && InputManager.AButtonTwo())
             {
                 StartCoroutine(speedBoost());
-                cakeCount2--;
-                Debug.Log("Cookie Success");
+                cakeCount--;
+             
             }
 
-            if (InputManager.BButtonTwo())
-            {
-                Debug.Log(cakeCount2);
-            }
+
         }
         if (CompareTag("Player3"))
         {
@@ -99,17 +96,14 @@ public class Player : MonoBehaviour
                 anim.SetBool("isMoving", true);
             }
 
-            if (cakeCount3 > 0 && InputManager.AButtonThree())
+            if (cakeCount > 0 && InputManager.AButtonThree())
             {
                 StartCoroutine(speedBoost());
-                cakeCount3--;
-                Debug.Log("Cookie Success");
+                cakeCount--;
+              
             }
 
-            if (InputManager.BButtonThree())
-            {
-                Debug.Log(cakeCount3);
-            }
+
 
         }
         if (CompareTag("Player4"))
@@ -127,17 +121,14 @@ public class Player : MonoBehaviour
                 anim.SetBool("isMoving", true);
             }
 
-            if (cakeCount4 > 0 && InputManager.AButtonFour())
+            if (cakeCount > 0 && InputManager.AButtonFour())
             {
                 StartCoroutine(speedBoost());
-                cakeCount4--;
+                cakeCount--;
                 Debug.Log("Cookie Success");
             }
 
-            if (InputManager.BButtonFour())
-            {
-                Debug.Log(cakeCount4);
-            }
+         
         }
     }
 
