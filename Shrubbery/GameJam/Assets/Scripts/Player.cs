@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             if (cakeCount3 > 0 && InputManager.AButtonThree())
             {
                 StartCoroutine(speedBoost());
-                cakeCount3--; 
+                cakeCount3--;
                 Debug.Log("Cookie Success");
             }
 
