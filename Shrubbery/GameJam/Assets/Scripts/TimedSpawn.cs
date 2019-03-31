@@ -20,7 +20,7 @@ public class TimedSpawn : MonoBehaviour
         Instantiate(spawnee, transform.position, transform.rotation);
         if (stopSpawning)
         {
-            CancelInvoke("SpawnObject");
+            //CancelInvoke("SpawnObject");
         }
     }
 }
