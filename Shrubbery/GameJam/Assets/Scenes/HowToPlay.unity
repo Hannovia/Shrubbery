@@ -1397,15 +1397,15 @@ RectTransform:
   m_GameObject: {fileID: 1928168099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.229, y: 3.229, z: 3.229}
+  m_LocalScale: {x: 0.9884331, y: 0.9884331, z: 0.9884331}
   m_Children: []
   m_Father: {fileID: 1628749493}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -444.3, y: -498}
-  m_SizeDelta: {x: 334.4, y: 74}
+  m_AnchoredPosition: {x: -493.83, y: -469.45}
+  m_SizeDelta: {x: 987.65, y: 197.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928168101
 MonoBehaviour:
@@ -1428,11 +1428,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5f8c0496b6a302f429c6e19a148c3c75, type: 3}
-    m_FontSize: 9
+    m_Font: {fileID: 12800000, guid: 0430ee131595312438bd34e2bb1c364d, type: 3}
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1440,8 +1440,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "M\xE5l:\nTa s\xE5 m\xE5nga t\xE5rtbitar du kan under 1 min.\nPiece of cake!\n\nSpeedboost:\nKostar
-    en bit och varar i 3 sekunder."
+  m_Text: "M\xE5l: Ta s\xE5 m\xE5nga t\xE5rtbitar du kan under 1 min.\nPiece of cake!\n\nSpeedboost:
+    Kostar en bit och varar i 3 sekunder."
 --- !u!222 &1928168102
 CanvasRenderer:
   m_ObjectHideFlags: 0

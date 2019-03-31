@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: abd80363b009d9048a2d0cde0c100654
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adobe Arabic
+  fontNames:
+  - Adobe Arabic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9523c8f0593f25e488478f6e8d83c0a3, type: 3}
+  - {fileID: 12800000, guid: 93a0dc7703b4b1a4b9e75c6b06ca068c, type: 3}
+  - {fileID: 12800000, guid: 94896bad81682834daad0be65bd7e70b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
