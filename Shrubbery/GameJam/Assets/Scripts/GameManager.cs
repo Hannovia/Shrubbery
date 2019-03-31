@@ -13,13 +13,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] players;
 
     [SerializeField] private Text[] scoreTexts;
+
+    public GameObject gameOverPanel;
+    public Text gameOverText;
     // Start is called before the first frame update
 
     public GameObject timer;
 
     void Start()
     {
-       
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,8 +61,9 @@ public class GameManager : MonoBehaviour
                 mostCakes = players[currentPlayer].GetComponent<Player>().GetNumberOfCakes();
             }
         }
+        gameOverPanel.SetActive(true);
+        gameOverText.text = "Winner: " + currentWinner.ToString();
 
-        Debug.Log("Winner: " + currentWinner.ToString());
-        SceneManager.LoadScene("ScoresScene");
+   
     }
 }
