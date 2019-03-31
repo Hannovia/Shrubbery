@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5554771671343463577}
   m_Layer: 0
   m_Name: cakepiece (3)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 11.53, y: 11.54}
   m_EdgeRadius: 0
 --- !u!50 &5554771671343463577
 Rigidbody2D:
