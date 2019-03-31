@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private int cakeCount3 = 0;
     private int cakeCount4 = 0;
 
+    private int cakeCount = 0;
+
     [SerializeField] private float speed;
 
     private Rigidbody2D rb;
@@ -185,8 +187,30 @@ public class Player : MonoBehaviour
         return cakeCount4;
     }
 
-    // if cakecount <0 and keydown x speed upp i x antal sekunder
-    IEnumerator speedBoost()
+    public void AddCake()
+    {
+        cakeCount++;
+    }
+
+    public int GetNumberOfCakes()
+    {
+        return cakeCount;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Collectable"))
+        {
+
+            cakeCount++;
+           
+            Destroy(collision.gameObject);
+
+        }
+
+}
+// if cakecount <0 and keydown x speed upp i x antal sekunder
+IEnumerator speedBoost()
     {
         speed = 14f;
 

@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 7414131591584195041}
   - component: {fileID: 7983921751801465810}
   - component: {fileID: 2184200299093103384}
-  - component: {fileID: 850526609534213441}
   - component: {fileID: 1285257555501170718}
   m_Layer: 0
   m_Name: cakepiece (2)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,18 +107,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.535723, y: 9.1001005}
   m_EdgeRadius: 0
---- !u!114 &850526609534213441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2448467645029069903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76439f3577076474bb26e58129b98b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1285257555501170718
 Rigidbody2D:
   serializedVersion: 4
